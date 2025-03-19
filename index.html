@@ -6,214 +6,294 @@
     <title>Roshini Bikkina | Full Stack Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        body {
+        /* Reset & Basic Styles */
+        * {
             margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f9fafb;
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background: #f9fafb;
         }
         a {
             text-decoration: none;
             color: inherit;
         }
-        header, footer {
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Header */
+        header {
             background-color: #003366;
             color: #fff;
-            text-align: center;
-            padding: 1.5em 0;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+        }
+        nav a {
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #00bfa6;
+        }
+
+        /* Hero */
         .hero {
-            background-color: #003366;
-            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px;
+            background: #003366;
+            color: #fff;
             text-align: center;
-            padding: 5em 1em;
         }
         .hero img {
-            width: 200px;
-            height: auto;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            margin-bottom: 1em;
+            margin-bottom: 20px;
+            border: 4px solid #00bfa6;
         }
-        .hero h1 {
+        .hero h2 {
             font-size: 2.5em;
-            font-weight: 600;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
         }
         .hero p {
             font-size: 1.2em;
-            margin: 1em 0 2em;
+            margin-bottom: 20px;
         }
         .btn {
             background-color: #00bfa6;
-            color: white;
-            padding: 0.8em 1.5em;
-            border-radius: 5px;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 6px;
             font-weight: 600;
-            display: inline-block;
+            transition: background-color 0.3s ease;
         }
         .btn:hover {
             background-color: #009688;
-            transition: background-color 0.3s ease;
         }
+
+        /* Sections */
         section {
-            padding: 4em 2em;
+            padding: 80px 20px;
             text-align: center;
         }
-        .education, .projects {
-            background-color: #eef1f5;
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 40px;
+            font-family: 'Montserrat', sans-serif;
+            color: #003366;
         }
-        .edu-card, .project-card {
-            display: inline-block;
+
+        /* About */
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1em;
+        }
+
+        /* Projects */
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .project-card {
+            background: #fff;
             width: 300px;
-            margin: 1em;
-            padding: 1.5em;
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            padding: 20px;
             border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
+            transform: translateY(-10px);
         }
+        .project-card h3 {
+            margin-bottom: 10px;
+            color: #003366;
+        }
+
+        /* Skills */
         .skills ul {
-            list-style-type: none;
-            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
         }
         .skills li {
-            display: inline-block;
-            margin: 0.5em;
             background-color: #00bfa6;
             color: #fff;
-            padding: 0.5em 1.2em;
+            margin: 8px;
+            padding: 12px 20px;
             border-radius: 5px;
+            font-weight: 500;
         }
+
+        /* Resume Section */
+        .resume p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        /* Contact */
         .contact form {
             max-width: 500px;
             margin: 0 auto;
         }
-        input, textarea {
+        .contact input, .contact textarea {
             width: 100%;
-            padding: 0.8em;
-            margin: 0.5em 0;
-            border: 1px solid #ccc;
+            padding: 12px;
+            margin: 10px 0;
             border-radius: 5px;
+            border: 1px solid #ccc;
         }
-        button {
+        .contact button {
             background-color: #00bfa6;
-            color: white;
+            color: #fff;
+            padding: 12px 20px;
             border: none;
-            padding: 0.8em 1.5em;
             border-radius: 5px;
             font-size: 1em;
         }
+
+        /* Footer */
         footer {
-            margin-top: 2em;
+            background-color: #003366;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
             font-size: 0.9em;
+        }
+        footer a {
+            color: #00bfa6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .projects-container {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
+    <!-- Header -->
     <header>
-        <h2>Roshini Bikkina | Full Stack Developer</h2>
+        <h1>Roshini Bikkina</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#resume">Resume</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
         <img src="IMG_6846.jpeg" alt="Roshini Bikkina">
-        <h1>Full Stack Developer | .NET | Angular | Azure</h1>
-        <p>Designing scalable, efficient web applications and APIs with .NET Core, Angular, and Azure Cloud services.</p>
-        <a href="#projects" class="btn">Explore My Work</a>
-        <br><br>
-        <!-- Download Resume Button -->
-        <a href="Roshini_Bikkina_Resume.pdf" class="btn" download>Download Resume</a>
+        <h2>Full Stack Developer</h2>
+        <p>.NET | Angular | Azure | Python | AWS</p>
+        <a href="#projects" class="btn">View My Work</a>
     </section>
 
-    <!-- About Section -->
-    <section class="about">
+    <!-- About -->
+    <section id="about" class="about">
         <h2>About Me</h2>
-        <p>I am a passionate Full Stack Developer with expertise in crafting applications using Angular, .NET, and AWS Cloud. Let’s collaborate to solve real-world challenges through innovation and clean code.</p>
+        <p>I’m a passionate Full Stack Developer specializing in building scalable web applications using Angular, .NET Core, and Azure Cloud services. With a background in Computer Science and a knack for problem-solving, I love turning complex challenges into elegant solutions.</p>
     </section>
 
-    <!-- Education Section -->
-    <section class="education">
-        <h2>Education</h2>
-        <div class="edu-card">
-            <h3>Master of Science in Computer Science</h3>
-            <p>Northwest Missouri State University<br>Jan 2023 - May 2024</p>
-        </div>
-        <div class="edu-card">
-            <h3>Bachelor of Technology in Computer Science</h3>
-            <p>K L University, India<br>June 2017 - April 2021</p>
-        </div>
-    </section>
+    <!-- Projects -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="projects-container">
 
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <h2>My Projects</h2>
+            <div class="project-card">
+                <h3>Employee Management System</h3>
+                <p>Built with Python and React for efficient employee data management and reporting.</p>
+                <a href="https://github.com/RoshiniNwmsu/employee-management" target="_blank" class="btn">GitHub</a>
+            </div>
 
-        <div class="project-card">
-            <h3>Employee Management System</h3>
-            <p>Built with Python and React, enabling seamless employee data management.</p>
-            <a href="https://github.com/RoshiniNwmsu/employee-management" target="_blank" class="btn">View on GitHub</a>
-        </div>
+            <div class="project-card">
+                <h3>AWS ETL Pipeline</h3>
+                <p>Developed automated data pipelines using AWS Glue, Redshift, and S3.</p>
+                <a href="https://github.com/RoshiniNwmsu/aws-etl-pipeline" target="_blank" class="btn">GitHub</a>
+            </div>
 
-        <div class="project-card">
-            <h3>AWS ETL Pipeline</h3>
-            <p>Developed robust data pipelines using AWS Glue, Redshift, and S3.</p>
-            <a href="https://github.com/RoshiniNwmsu/aws-etl-pipeline" target="_blank" class="btn">View on GitHub</a>
-        </div>
+            <div class="project-card">
+                <h3>Responsive Web App</h3>
+                <p>Scalable and mobile-friendly web application using Angular and Node.js.</p>
+                <a href="https://github.com/RoshiniNwmsu/responsive-web-app" target="_blank" class="btn">GitHub</a>
+            </div>
 
-        <div class="project-card">
-            <h3>Responsive Web App</h3>
-            <p>Crafted a scalable web solution using Angular and Node.js.</p>
-            <a href="https://github.com/RoshiniNwmsu/responsive-web-app" target="_blank" class="btn">View on GitHub</a>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills">
+    <!-- Skills -->
+    <section id="skills" class="skills">
         <h2>Technical Skills</h2>
         <ul>
             <li>Angular</li>
-            <li>.NET</li>
+            <li>.NET Core</li>
+            <li>C#</li>
+            <li>Azure</li>
+            <li>AWS</li>
             <li>Python</li>
-            <li>AWS (EC2, ECS, RDS)</li>
+            <li>SQL Server</li>
             <li>Docker</li>
             <li>GraphQL</li>
         </ul>
     </section>
 
-    <!-- Resume Section -->
-    <section class="resume">
-        <h2>My Resume</h2>
-        <p>You can download my updated resume by clicking the button below:</p>
-        <a href="Roshini_Bikkina_Resume.pdf" class="btn" download>Download My Resume (PDF)</a>
+    <!-- Resume -->
+    <section id="resume" class="resume">
+        <h2>Resume</h2>
+        <p>Download my latest resume here:</p>
+        <a href="Roshini_Bikkina_Resume.pdf" download class="btn">Download Resume</a>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact">
+    <!-- Contact -->
+    <section id="contact" class="contact">
         <h2>Contact Me</h2>
         <form>
-            <input type="text" placeholder="Your Name" required><br>
-            <input type="email" placeholder="Your Email" required><br>
-            <textarea rows="5" placeholder="Your Message"></textarea><br>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message"></textarea>
             <button type="submit">Send Message</button>
         </form>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Connect with me: 
+        <p>&copy; 2024 Roshini Bikkina | All Rights Reserved</p>
+        <p>Connect with me on 
             <a href="https://www.linkedin.com/in/roshinibikkina" target="_blank">LinkedIn</a> | 
             <a href="https://github.com/RoshiniNwmsu" target="_blank">GitHub</a>
         </p>
-        <p>&copy; 2024 Roshini Bikkina | All Rights Reserved</p>
     </footer>
 
 </body>
